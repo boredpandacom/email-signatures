@@ -65,3 +65,4 @@ see Panda Ventures. Swapping in a real logo later needs no layout change.
 
 The Gmail mobile app only supports plain-text signatures. The generator
 provides a plain version for that; there is no way to use the HTML one there.
+
