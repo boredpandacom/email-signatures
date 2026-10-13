@@ -8,8 +8,8 @@ group-sig-2x.png        logos, referenced by index.html
 boredpanda-sig-2x.png
 spike-sig-2x.png
 studios-sig-2x.png
-BP-logo-black.svg       page header and footer logos (not used in signatures)
-BP-logo-white.svg
+BP-logo-white.svg       page footer logo (not used in signatures)
+BP-logo-black.svg       source artwork for group-sig-2x.png; the page doesn't load it
 favicon.svg
 fonts/                  Haffer SemiBold, the brand heading font
 ```

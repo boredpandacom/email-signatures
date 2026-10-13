@@ -27,13 +27,14 @@
     --ease-bounce:cubic-bezier(.34,1.56,.64,1);
   }
   *{box-sizing:border-box}
+  [hidden]{display:none!important}
   html{-webkit-text-size-adjust:100%;background:var(--white)}
   body{
     margin:0; background:var(--white); color:var(--black);
     font-family:var(--font-body); font-size:1.0625rem; line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3,legend,.btn,.kicker,.toggle button,.co span,label.f span,.pv-label,ol li::before,ol li b,.box p b,.alert b{
+  h1,h2,h3,legend,.btn,.toggle button,.co span,label.f span,.pv-label,ol li::before,ol li b,.box p b,.alert b{
     font-family:var(--font-heading);font-weight:600;
   }
   h1,h2,h3{letter-spacing:-.02em;line-height:1.08;margin:0}
@@ -41,38 +42,28 @@
   :focus-visible{outline:2px solid var(--violet);outline-offset:2px}
   .wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
 
-  /* ---- header ---- */
-  .top{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:5.4rem}
-  .top__logo{display:block;border-radius:.5rem}
-  .top__logo img{display:block;height:2rem;width:auto}
-
   /* ---- hero ---- */
-  .hero{text-align:center;padding-block:clamp(2rem,5vw,4rem) clamp(2.5rem,6vw,4.5rem)}
-  .kicker{
-    display:inline-block;margin:0 0 .9rem;padding:.18em .45em;border-radius:.22em;
-    background:var(--yellow);color:var(--black);font-size:.9375rem;line-height:1.25;
-  }
-  .kicker--violet{background:var(--violet);color:var(--white)}
-  h1{font-size:clamp(2.5rem,7vw,5rem);letter-spacing:-.035em}
+  .hero{padding-block:clamp(1.75rem,4vw,2.75rem) clamp(1.5rem,3vw,2rem)}
+  h1{font-size:clamp(1.75rem,3.6vw,2.5rem);letter-spacing:-.03em}
   .violet{color:var(--violet)} .orange{color:var(--orange)}
-  .lede{max-width:36rem;margin:1.5rem auto 0;color:var(--text-soft);font-size:clamp(1rem,1.3vw,1.125rem)}
+  .lede{max-width:46rem;margin:.6rem 0 0;text-wrap:pretty;color:var(--text-soft);font-size:1rem}
 
-  .grid{display:grid;gap:1.5rem}
+  .grid{display:grid;gap:1rem}
   @media(min-width:900px){.grid{grid-template-columns:minmax(0,25rem) minmax(0,1fr);align-items:start}}
-  .panel{border-radius:var(--radius-md);padding:clamp(1.5rem,3vw,2rem)}
+  .panel{border-radius:var(--radius-md);padding:clamp(1.25rem,2.5vw,1.6rem)}
   .panel--gray{background:var(--gray-bg)}
   .panel--line{box-shadow:inset 0 0 0 1px var(--black)}
   @media(min-width:900px){.panel--line{position:sticky;top:1.5rem}}
 
   /* ---- form ---- */
-  fieldset{border:0;padding:0;margin:0 0 2rem;min-width:0}
+  fieldset{border:0;padding:0;margin:0 0 1.4rem;min-width:0}
   fieldset:last-child{margin-bottom:0}
-  legend{font-size:1.35rem;letter-spacing:-.02em;line-height:1.2;padding:0;margin:0 0 1rem}
-  .companies{display:grid;gap:.5rem}
+  legend{font-size:1.125rem;letter-spacing:-.02em;line-height:1.2;padding:0;margin:0 0 .7rem}
+  .companies{display:grid;gap:.4rem}
   .co{
     --co:var(--gray);--co-text:var(--black);
     display:flex;align-items:center;gap:.75rem;cursor:pointer;
-    border-radius:var(--radius-sm);padding:.85rem 1.1rem;
+    border-radius:var(--radius-sm);padding:.6rem 1rem;
     background:var(--white);box-shadow:inset 0 0 0 1px var(--line);
     transition:transform .25s var(--ease-bounce),background-color .2s ease,box-shadow .2s ease;
   }
@@ -84,50 +75,55 @@
     appearance:none;-webkit-appearance:none;flex:none;margin:0;width:1.1rem;height:1.1rem;border-radius:50%;
     background:var(--co);box-shadow:none;transition:box-shadow .2s ease,background-color .2s ease;
   }
-  .co span{font-size:1.0625rem;letter-spacing:-.01em}
+  .co span{font-size:1rem;letter-spacing:-.01em}
   .co:has(input:checked){background:var(--co);color:var(--co-text);box-shadow:none;transform:scale(1.015)}
   .co:has(input:checked) input{background:var(--co-text);box-shadow:inset 0 0 0 .3rem var(--co-text),inset 0 0 0 1rem var(--co)}
   .co:has(input:focus-visible){outline:2px solid var(--violet);outline-offset:2px}
   .co input:focus-visible{outline:none}
 
-  label.f{display:block;margin:0 0 1rem}
-  label.f span{display:block;font-size:.9375rem;margin:0 0 .35rem}
+  label.f{display:block;margin:0 0 .7rem}
+  label.f span{display:block;font-size:.875rem;margin:0 0 .25rem}
   label.f span i{font-family:var(--font-body);font-style:normal;font-weight:400;color:var(--text-soft)}
   input[type=text],input[type=email],input[type=tel]{
-    width:100%;font:inherit;font-size:1rem;padding:.8rem 1.1rem;
+    width:100%;font:inherit;font-size:1rem;padding:.6rem 1rem;
     border:0;border-radius:var(--radius-sm);background:var(--white);color:var(--black);
     box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .2s ease;
   }
   input::placeholder{color:#00000073}
   input[type=text]:hover,input[type=email]:hover,input[type=tel]:hover{box-shadow:inset 0 0 0 1px var(--black)}
   input[type=text]:focus,input[type=email]:focus,input[type=tel]:focus{outline:none;box-shadow:inset 0 0 0 2px var(--black)}
-  .hint{font-size:.875rem;color:var(--text-soft);margin:-.35rem 0 0}
+  .hint{font-size:.8125rem;line-height:1.45;color:var(--text-soft);margin:-.2rem 0 0}
 
   /* ---- preview ---- */
-  .pv-head{display:flex;align-items:center;gap:.75rem 1rem;flex-wrap:wrap;margin:0 0 1rem}
-  .pv-label{font-size:1.35rem;letter-spacing:-.02em;line-height:1.2;margin-right:auto}
-  .pv-note{font-size:.875rem;color:var(--text-soft);margin:.9rem 0 0}
+  .pv-head{display:flex;align-items:center;gap:.5rem .9rem;flex-wrap:wrap;margin:0 0 .8rem}
+  .pv-label{font-size:1.125rem;letter-spacing:-.02em;line-height:1.2}
+  /* Phone disables this toggle rather than hiding it, so nothing else moves. */
+  #themeToggle{margin-left:auto;transition:opacity .2s ease}
+  body.phone #themeToggle{opacity:.35}
+  .toggle button:disabled{cursor:not-allowed}
+  .pv-note{font-size:.8125rem;line-height:1.5;color:var(--text-soft);margin:.7rem 0 0}
+  @media(max-width:899px){.pv-note{min-height:3em}}
   .toggle{display:inline-flex;gap:.15rem;padding:.25rem;border-radius:var(--radius-pill);background:var(--gray-bg)}
   .toggle button{
     appearance:none;border:0;background:transparent;color:var(--black);cursor:pointer;
-    font-size:.9375rem;line-height:1.2;padding:.45rem 1rem;border-radius:var(--radius-pill);
+    font-size:.875rem;line-height:1.2;padding:.4rem .9rem;border-radius:var(--radius-pill);
     transition:background-color .2s ease,color .2s ease;
   }
   .toggle button[aria-pressed=true]{background:var(--black);color:var(--white)}
 
   .canvas{
     background:var(--white);border-radius:var(--radius-sm);box-shadow:inset 0 0 0 1px var(--line);
-    padding:1.6rem 1.5rem;min-height:12rem;overflow-x:auto;
+    padding:1.25rem 1.5rem;min-height:12.75rem;overflow-x:auto;
     transition:background .18s ease,box-shadow .18s ease;
   }
-  body.dark .canvas{background:#1A1A1D;box-shadow:none}
+  body.dark:not(.phone) .canvas{background:#1A1A1D;box-shadow:none}
   body.dark .canvas .sig td,body.dark .canvas .sig a,body.dark .canvas .sig span{color:#EDEDEF!important}
   body.dark .canvas .sig td[style*="letter-spacing"]{color:#8A8A92!important}
 
-  .btnrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.25rem;align-items:center}
+  .btnrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem;align-items:center}
   .btn{
     appearance:none;display:inline-flex;align-items:center;cursor:pointer;white-space:nowrap;
-    font-size:1rem;line-height:1.2;padding:.9rem 1.6rem;border:0;border-radius:var(--radius-pill);
+    font-size:.9375rem;line-height:1.2;padding:.75rem 1.4rem;border:0;border-radius:var(--radius-pill);
     background:var(--black);color:var(--white);
     transition:transform .25s var(--ease-bounce),background-color .25s ease,color .25s ease;
   }
@@ -137,30 +133,27 @@
   .btn[data-state=done],.btn[data-state=done]:hover{background:var(--green);color:var(--black);box-shadow:none}
 
   /* ---- steps ---- */
-  .steps{margin-top:clamp(3.5rem,8vw,6rem)}
-  .steps__head{text-align:center;margin-bottom:clamp(1.75rem,4vw,2.75rem)}
-  .steps h2{font-size:clamp(2rem,4.5vw,3.5rem)}
-  .steps__grid{display:grid;gap:1.5rem}
+  .steps{margin-top:clamp(2.25rem,5vw,3.25rem)}
+  .steps__head{margin-bottom:1rem}
+  .steps h2{font-size:clamp(1.4rem,2.6vw,1.75rem)}
+  .steps__grid{display:grid;gap:1rem}
   @media(min-width:900px){.steps__grid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:start}}
-  .steps__side{display:grid;gap:1.5rem}
+  .steps__side{display:grid;gap:1rem}
   ol{margin:0;padding:0;list-style:none;counter-reset:s}
-  ol li{counter-increment:s;position:relative;padding:.2rem 0 1.1rem 3rem;color:var(--text-soft)}
+  ol li{counter-increment:s;position:relative;padding:.1rem 0 .7rem 2.4rem;font-size:1rem;color:var(--text-soft)}
   ol li:last-child{padding-bottom:0}
   ol li::before{
     content:counter(s);position:absolute;left:0;top:0;
-    width:2rem;height:2rem;border-radius:50%;background:var(--black);color:var(--white);
-    font-size:.9375rem;display:flex;align-items:center;justify-content:center;
+    width:1.7rem;height:1.7rem;border-radius:50%;background:var(--black);color:var(--white);
+    font-size:.8125rem;display:flex;align-items:center;justify-content:center;
   }
   ol li b,.box p b{color:var(--black)}
 
-  .box h3{font-size:1.35rem;margin:0 0 .6rem}
-  .box p{margin:0 0 .7rem;font-size:1rem;color:var(--text-soft)}
+  .box h3{font-size:1.125rem;margin:0 0 .5rem}
+  .box p{margin:0 0 .6rem;font-size:.9375rem;color:var(--text-soft)}
   .box p:last-child{margin-bottom:0}
-  .box--yellow{background:var(--yellow)}
-  .box--yellow p{color:#000000b8}
   pre.plain{
-    margin:1rem 0 0;padding:1rem 1.1rem;background:var(--white);border-radius:var(--radius-sm);
-    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
     font-size:.8125rem;line-height:1.65;white-space:pre-wrap;color:var(--black);
   }
   .alert{
@@ -171,24 +164,19 @@
 
   /* ---- footer ---- */
   .footer{
-    margin-top:clamp(3.5rem,8vw,6rem);background:var(--black);color:var(--white);
-    border-radius:var(--radius-lg) var(--radius-lg) 0 0;padding-block:3rem 2.5rem;
+    margin-top:clamp(2.25rem,5vw,3.25rem);background:var(--black);color:var(--white);
+    border-radius:var(--radius-md) var(--radius-md) 0 0;padding-block:1.5rem;
   }
   .footer__inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem 2rem;flex-wrap:wrap}
-  .footer img{display:block;height:2.5rem;width:auto}
-  .footer p{margin:0;font-family:var(--font-heading);font-weight:600;font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.25;opacity:.55}
+  .footer img{display:block;height:1.75rem;width:auto}
+  .footer p{margin:0;font-family:var(--font-heading);font-weight:600;font-size:1rem;line-height:1.25;opacity:.55}
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<header class="wrap top">
-  <a class="top__logo" href="https://www.boredpandagroup.com/"><img src="BP-logo-black.svg" width="154" height="32" alt="Bored Panda Group"></a>
-</header>
-
 <main class="wrap">
   <section class="hero">
-    <p class="kicker">Email signature</p>
-    <h1><span class="violet">Make your</span> <span class="orange">signature</span></h1>
+    <h1><span class="violet">Make your</span> <span class="orange">email signature</span></h1>
     <p class="lede">Pick your company, fill in your details, copy, paste into Gmail. Takes about a minute. Don't retype or reformat anything afterwards — the layout is deliberate and Gmail will keep it as-is.</p>
   </section>
 
@@ -218,29 +206,32 @@
       <div class="pv-head">
         <span class="pv-label">Preview</span>
         <span class="toggle">
+          <button type="button" id="tComputer" aria-pressed="true">Computer</button>
+          <button type="button" id="tPhone" aria-pressed="false">Phone</button>
+        </span>
+        <span class="toggle" id="themeToggle" title="Light and dark only apply to the computer signature">
           <button type="button" id="tLight" aria-pressed="true">Light</button>
           <button type="button" id="tDark" aria-pressed="false">Dark</button>
         </span>
       </div>
 
-      <div class="canvas"><div class="sig" id="preview"></div></div>
+      <div class="canvas"><div class="sig" id="preview"></div><pre class="plain" id="plainOut" hidden></pre></div>
       <p class="pv-note" id="pvNote">Check both — many people read mail in dark mode.</p>
 
       <div class="btnrow">
         <button class="btn" id="copyBtn">Copy signature</button>
-        <button class="btn ghost" id="copyPlain">Copy plain text for phone</button>
+        <button class="btn" id="copyPlain" hidden>Copy plain text</button>
       </div>
     </div>
   </div>
 
   <section class="steps">
     <div class="steps__head">
-      <p class="kicker kicker--violet">How to</p>
-      <h2>Putting it into Gmail</h2>
+      <h2 id="stepsTitle">Putting it into Gmail</h2>
     </div>
     <div class="steps__grid">
       <div class="panel panel--gray">
-        <ol>
+        <ol id="stepsComputer">
           <li>Click <b>Copy signature</b> above.</li>
           <li>In Gmail on a computer, open <b>Settings</b> (the gear, top right) → <b>See all settings</b>.</li>
           <li>Stay on the <b>General</b> tab and scroll down to <b>Signature</b>. Click <b>Create new</b> and name it anything.</li>
@@ -250,15 +241,15 @@
           <li>Scroll to the very bottom and click <b>Save Changes</b>. Gmail throws everything away if you skip this.</li>
           <li>Send yourself a test email to check it arrived correctly.</li>
         </ol>
+        <ol id="stepsPhone" hidden>
+          <li>Open this page on your phone, switch the preview to <b>Phone</b> and tap <b>Copy plain text</b>.</li>
+          <li>In the Gmail app, open <b>Menu → Settings → your account → Signature settings</b>.</li>
+          <li>Delete anything already in the box, paste, and save.</li>
+          <li>Send yourself a test email from the app to check it arrived correctly.</li>
+        </ol>
       </div>
 
       <div class="steps__side">
-        <div class="panel box box--yellow">
-          <h3>On your phone</h3>
-          <p>The Gmail app can't use this signature — it only supports plain text, and there's no way around that. Use the plain version instead: <b>Gmail app → Menu → Settings → your account → Signature settings</b>.</p>
-          <pre class="plain" id="plainOut"></pre>
-        </div>
-
         <div class="panel panel--gray box">
           <h3>If something looks wrong</h3>
           <p>If the logo doesn't appear, your mail client is probably blocking images — the recipient will still see it. If the text arrives in the wrong font or with a coloured background, the copy picked up something stray: clear the Gmail box completely and paste again.</p>
@@ -271,7 +262,7 @@
 
 <footer class="footer">
   <div class="wrap footer__inner">
-    <img src="BP-logo-white.svg" width="192" height="40" alt="Bored Panda Group">
+    <img src="BP-logo-white.svg" width="135" height="28" alt="Bored Panda Group">
     <p>Let's fight boredom together.</p>
   </div>
 </footer>
@@ -438,16 +429,46 @@
 
   // ---- theme ---------------------------------------------------------
   var L = document.getElementById("tLight"), D = document.getElementById("tDark");
-  function theme(dark){
+  var dark = false, phone = false;
+  function note(){
+    document.getElementById("pvNote").textContent = phone
+      ? "The Gmail app only supports plain text — use this version there."
+      : dark
+        ? "The logo carries its own light edge so it holds up here."
+        : "Check both — many people read mail in dark mode.";
+  }
+  function theme(d){
+    dark = d;
     document.body.classList.toggle("dark", dark);
     L.setAttribute("aria-pressed", String(!dark));
     D.setAttribute("aria-pressed", String(dark));
-    document.getElementById("pvNote").textContent = dark
-      ? "The logo carries its own light edge so it holds up here."
-      : "Check both — many people read mail in dark mode.";
+    note();
   }
   L.addEventListener("click", function(){ theme(false); });
   D.addEventListener("click", function(){ theme(true); });
+
+  // ---- computer / phone ----------------------------------------------
+  // The Gmail app only takes plain text, so Phone swaps the preview, the
+  // copy button and the steps over to the plain version.
+  var C = document.getElementById("tComputer"), P = document.getElementById("tPhone");
+  function view(p){
+    phone = p;
+    document.body.classList.toggle("phone", phone);
+    C.setAttribute("aria-pressed", String(!phone));
+    P.setAttribute("aria-pressed", String(phone));
+    els.prev.hidden = phone;
+    els.plain.hidden = !phone;
+    L.disabled = D.disabled = phone;
+    document.getElementById("copyBtn").hidden = phone;
+    document.getElementById("copyPlain").hidden = !phone;
+    document.getElementById("stepsComputer").hidden = phone;
+    document.getElementById("stepsPhone").hidden = !phone;
+    document.getElementById("stepsTitle").textContent = phone
+      ? "Putting it into the Gmail app" : "Putting it into Gmail";
+    note();
+  }
+  C.addEventListener("click", function(){ view(false); });
+  P.addEventListener("click", function(){ view(true); });
 
   render();
 })();
