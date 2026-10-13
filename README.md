@@ -59,7 +59,7 @@ make Spike unreadable and boredpanda.com overbearing.
 
 Add an entry to `COMPANIES`. A company without a logo yet uses `wordmark`
 instead of `img`, and gets its name typeset at the weight a logo would carry —
-see Panda Ventures. Swapping in a real logo later needs no layout change.
+see Bored Panda Group. Swapping in a real logo later needs no layout change.
 
 ## Known limitation
 
