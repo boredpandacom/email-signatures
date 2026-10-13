@@ -473,6 +473,8 @@
   }
   C.addEventListener("click", function(){ view(false); });
   P.addEventListener("click", function(){ view(true); });
+  // Phones open on the Phone tab, since that is the signature they can use.
+  if(window.matchMedia && matchMedia("(max-width:560px)").matches) view(true);
 
   render();
 })();
