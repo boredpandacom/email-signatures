@@ -4,14 +4,15 @@ A static site. No build step, no server, no dependencies.
 
 ```
 index.html              the generator people use
-boredpanda-sig-2x.png   logos, referenced by index.html
+group-sig-2x.png        logos, referenced by index.html
+boredpanda-sig-2x.png
 spike-sig-2x.png
 studios-sig-2x.png
 ```
 
 ## Deploying
 
-1. Push these four files to the root of a repository.
+1. Push these five files to the root of a repository.
 2. Repo **Settings → Pages → Source: Deploy from a branch**, branch `main`,
    folder `/ (root)`.
 3. Wait a minute, then open the published URL.
@@ -51,15 +52,16 @@ Two rules if you edit it:
 - **Never set a background colour.** That is what makes the signature survive
   dark mode. The logos carry their own light edge instead.
 
-Logo display sizes are 163×34, 129×40 and 79×44. They differ on purpose — the
-three marks have very different proportions, and matching them by height would
-make Spike unreadable and boredpanda.com overbearing.
+Logo display sizes are 181×40, 163×34, 129×40 and 79×44. They differ on
+purpose — the marks have very different proportions, and matching them by
+height would make Spike unreadable and boredpanda.com overbearing.
 
 ## Adding a company
 
 Add an entry to `COMPANIES`. A company without a logo yet uses `wordmark`
 instead of `img`, and gets its name typeset at the weight a logo would carry —
-see Bored Panda Group. Swapping in a real logo later needs no layout change.
+as Bored Panda Group did before its logo was added. Swapping in a real logo
+later needs no layout change.
 
 ## Known limitation
 
