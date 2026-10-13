@@ -62,7 +62,7 @@
   /* ---- form ---- */
   fieldset{border:0;padding:0;margin:0 0 1.4rem;min-width:0}
   fieldset:last-child{margin-bottom:0}
-  legend{font-size:1.125rem;letter-spacing:-.02em;line-height:1.2;padding:0;margin:0 0 .7rem}
+  legend{font-size:1.125rem;letter-spacing:-.02em;line-height:1.2;padding:0;margin:0 0 1.1rem}
   .companies{display:grid;gap:.4rem}
   .co{
     --co:var(--gray);--co-text:var(--black);
@@ -99,7 +99,7 @@
   .hint{font-size:.8125rem;line-height:1.45;color:var(--text-soft);margin:-.2rem 0 0}
 
   /* ---- preview ---- */
-  .pv-head{display:flex;align-items:center;gap:.5rem .9rem;flex-wrap:wrap;margin:0 0 .8rem}
+  .pv-head{display:flex;align-items:center;gap:.5rem .9rem;flex-wrap:wrap;margin:0 0 1.1rem}
   .pv-label{font-size:1.125rem;letter-spacing:-.02em;line-height:1.2}
   /* Phone disables this toggle rather than hiding it, so nothing else moves. */
   #themeToggle{margin-left:auto;transition:opacity .2s ease}
@@ -137,18 +137,18 @@
   .btn[data-state=done],.btn[data-state=done]:hover{background:var(--green);color:var(--black);box-shadow:none}
 
   /* ---- steps ---- */
-  .steps h2{font-size:1.125rem;line-height:1.2;margin:0 0 .9rem}
+  .steps h2{font-size:1.125rem;line-height:1.2;margin:0 0 1.1rem}
   ol{margin:0;padding:0;list-style:none;counter-reset:s}
-  ol li{counter-increment:s;position:relative;padding:.1rem 0 .7rem 2.4rem;font-size:1rem;color:var(--text-soft)}
+  ol li{counter-increment:s;position:relative;padding:0 0 .6rem 1.6rem;font-size:1rem;color:var(--text-soft)}
   ol li:last-child{padding-bottom:0}
   ol li::before{
-    content:counter(s);position:absolute;left:0;top:0;
-    width:1.7rem;height:1.7rem;border-radius:50%;background:var(--black);color:var(--white);
-    font-size:.8125rem;display:flex;align-items:center;justify-content:center;
+    content:counter(s) ".";position:absolute;left:0;top:0;
+    color:var(--black);font-size:.9375rem;line-height:inherit;
   }
   ol li b,.box p b{color:var(--black)}
 
-  .box h3{font-size:1.125rem;margin:0 0 .5rem}
+  .box h3{display:flex;align-items:center;gap:.5rem;font-size:1.125rem;margin:0 0 .75rem}
+  .warn{flex:none;width:1.35rem;height:1.35rem;color:var(--orange)}
   .box p{margin:0 0 .6rem;font-size:.9375rem;color:var(--text-soft)}
   .box p:last-child{margin-bottom:0}
   pre.plain{
@@ -245,7 +245,7 @@
       </section>
 
       <div class="panel panel--gray box">
-        <h3>If something looks wrong</h3>
+        <h3><svg class="warn" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path fill="#fff" d="M10.800 6h2.400l-.35 7.500h-1.700L10.800 6Zm1.200 12.200a1.450 1.450 0 1 1 0-2.900 1.450 1.450 0 0 1 0 2.900Z"/></svg>If something looks wrong</h3>
         <p>If the logo doesn't appear, your mail client is probably blocking images — the recipient will still see it. If the text arrives in the wrong font or with a coloured background, the copy picked up something stray: clear the Gmail box completely and paste again.</p>
         <p>Don't fix problems by retyping inside Gmail. Come back here and copy again.</p>
       </div>
