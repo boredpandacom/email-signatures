@@ -105,8 +105,15 @@
   #themeToggle{margin-left:auto;transition:opacity .2s ease}
   body.phone #themeToggle{opacity:.35}
   .toggle button:disabled{cursor:not-allowed}
+  /* Narrow screens: title on its own row, the two switches side by side below it. */
+  @media(max-width:560px){
+    .pv-label{flex-basis:100%}
+    .pv-head{gap:.7rem .5rem}
+    .toggle{flex:1 1 auto}
+    .toggle button{flex:1 1 auto;padding:.45rem .5rem}
+    #themeToggle{margin-left:0}
+  }
   .pv-note{font-size:.8125rem;line-height:1.5;color:var(--text-soft);margin:.7rem 0 0}
-  @media(max-width:899px){.pv-note{min-height:3em}}
   .toggle{display:inline-flex;gap:.15rem;padding:.25rem;border-radius:var(--radius-pill);background:var(--gray-bg)}
   .toggle button{
     appearance:none;border:0;background:transparent;color:var(--black);cursor:pointer;
@@ -220,7 +227,7 @@
         </div>
 
         <div class="canvas"><div class="sig" id="preview"></div><pre class="plain" id="plainOut" hidden></pre></div>
-        <p class="pv-note" id="pvNote">Check both — many people read mail in dark mode.</p>
+        <p class="pv-note" id="pvNote">Check both — many people use dark mode.</p>
 
         <div class="btnrow">
           <button class="btn" id="copyBtn">Copy signature</button>
@@ -429,10 +436,10 @@
   var dark = false, phone = false;
   function note(){
     document.getElementById("pvNote").textContent = phone
-      ? "The Gmail app only supports plain text — use this version there."
+      ? "The Gmail app only supports plain text."
       : dark
-        ? "The logo carries its own light edge so it holds up here."
-        : "Check both — many people read mail in dark mode.";
+        ? "The logo's light edge keeps it readable."
+        : "Check both — many people use dark mode.";
   }
   function theme(d){
     dark = d;
