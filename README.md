@@ -8,11 +8,19 @@ group-sig-2x.png        logos, referenced by index.html
 boredpanda-sig-2x.png
 spike-sig-2x.png
 studios-sig-2x.png
+BP-logo-black.svg       page header and footer logos (not used in signatures)
+BP-logo-white.svg
+favicon.svg
+fonts/                  Haffer SemiBold, the brand heading font
 ```
+
+The page itself follows the boredpandagroup.com look: Haffer headings, Arial
+body, the group colour palette. That styling never reaches the signatures,
+which stay plain Arial so mail clients render them reliably.
 
 ## Deploying
 
-1. Push these five files to the root of a repository.
+1. Push everything above to the root of a repository.
 2. Repo **Settings → Pages → Source: Deploy from a branch**, branch `main`,
    folder `/ (root)`.
 3. Wait a minute, then open the published URL.
